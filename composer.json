@@ -20,7 +20,7 @@
         "jms/di-extra-bundle": "1.1.*"
     },
 	"require-dev": {
-		"behat/symfony2-extension": "1.0.*"
+		"behat/symfony2-extension": "*"
 	},
     "scripts": {
         "post-install-cmd": [
