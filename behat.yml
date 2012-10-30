@@ -1,3 +1,8 @@
 default:
     extensions:
         Behat\Symfony2Extension\Extension: ~
+        Behat\MinkExtension\Extension:
+            base_url:  'http://qacfp.local'
+            browser_name: 'chromium'
+            goutte: ~
+            selenium2: ~
