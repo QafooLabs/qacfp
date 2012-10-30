@@ -20,7 +20,10 @@
         "jms/di-extra-bundle": "1.1.*"
     },
 	"require-dev": {
-		"behat/symfony2-extension": "*"
+		"behat/symfony2-extension": "*",
+		"behat/mink-extension": "*",
+		"behat/mink-goutte-driver": "*",
+		"behat/mink-selenium2-driver": "*"
 	},
     "scripts": {
         "post-install-cmd": [
