@@ -1,1 +1,21 @@
-Hello {{ name }}!
+{% extends '::base.html.twig' %}
+
+{% block body %}
+  <h2>Welcome</h2>
+  <p>
+    Welcome to the qaCFP tool, which should help speakers at PHP conferences to keep track of their call for papers (CFPs).
+  </p>
+  <p>
+    The tool provides you with two reminder lists on CPFs:
+  </p>
+  <ul>
+    <li><a href="/reminder/upcoming">Upcoming ones</a></li>
+    <li><a href="/reminder/ending">Ending ones</a></li>
+  </ul>
+  <p>
+    For both of these, you can customize reminder time spans and integrate the lists into your newsreader, using RSS or Atom feeds.
+  </p>
+  <p>
+    Please feel invited to contribute to this tool by <a href="/cfp/new">adding CFPs</a> you are aware of. Thanks!
+  </p>
+{% endblock %}
