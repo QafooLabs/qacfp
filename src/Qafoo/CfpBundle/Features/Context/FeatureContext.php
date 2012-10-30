@@ -21,10 +21,20 @@ use Behat\Gherkin\Node\PyStringNode,
 /**
  * Feature context.
  */
-class FeatureContext extends BehatContext //MinkContext if you want to test web
-                  implements KernelAwareInterface
+class FeatureContext extends MinkContext implements KernelAwareInterface
 {
+    /**
+     * Symfony App Kernel
+     *
+     * @var mixed
+     */
     private $kernel;
+
+    /**
+     * Configuration parameters from behat.yml
+     *
+     * @var mixed
+     */
     private $parameters;
 
     /**
@@ -47,17 +57,4 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
     {
         $this->kernel = $kernel;
     }
-
-//
-// Place your definition and hook methods here:
-//
-//    /**
-//     * @Given /^I have done something with "([^"]*)"$/
-//     */
-//    public function iHaveDoneSomethingWith($argument)
-//    {
-//        $container = $this->kernel->getContainer();
-//        $container->get('some_service')->doSomethingWith($argument);
-//    }
-//
 }
