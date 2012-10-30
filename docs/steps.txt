@@ -1,0 +1,25 @@
+=====
+Steps
+=====
+
+1. `Symfony standard setup`__ (478b5f55e54b537f9ecf8f32ec6f0fb006cf36d3)
+   
+   - Create bundle and stuff
+
+2. Install Behat + Symfony extension
+   (09552a581099dd8d9ad22f78c52debbc6b724a41)
+
+   - Composer dependency -> sourced auch Behat
+   - behat.yml (activate extension)
+
+__ http://symfony.com/doc/current/book/installation.html#option-1-composer
+   
+
+
+
+..
+   Local Variables:
+   mode: rst
+   fill-column: 79
+   End: 
+   vim: et syn=rst tw=79
