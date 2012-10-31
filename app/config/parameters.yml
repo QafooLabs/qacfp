@@ -2,7 +2,7 @@ parameters:
     database_driver: pdo_sqlite
     database_host: localhost
     database_port: null
-    database_name: qacfp
+    database_name: app/data/database.sqlite
     database_user: root
     database_password: null
     mailer_transport: smtp
