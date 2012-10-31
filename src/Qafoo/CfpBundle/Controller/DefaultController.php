@@ -80,4 +80,15 @@ class DefaultController extends Controller
             array('cfp' => $cfp)
         );
     }
+
+    public function listAction()
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $cfpList = $entityManager->getRepository('QafooCfpBundle:Cfp')->findAll();
+
+        return $this->render(
+            'QafooCfpBundle:Default:list.html.twig',
+            array('cfpList' => $cfpList)
+        );
+    }
 }

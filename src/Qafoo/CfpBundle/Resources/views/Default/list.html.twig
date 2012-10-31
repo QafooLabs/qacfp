@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+  <h2>List of CFPs</h2>
+  <ul id="cfps">
+	{% for cfp in cfpList %}
+	<li>{{ cfp.conferenceName }}</li>
+	{% endfor %}
+  </ul>
+{% endblock %}

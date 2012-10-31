@@ -9,3 +9,7 @@ qafoo_cfp_new:
 qafoo_cfp_new_success:
     pattern: /cfp/{cfpId}/success
     defaults: { _controller: QafooCfpBundle:Default:success }
+
+qafoo_cfp_list:
+    pattern: /cfp
+    defaults: { _controller: QafooCfpBundle:Default:list }
