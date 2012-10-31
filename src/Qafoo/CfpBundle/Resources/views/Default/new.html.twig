@@ -1,0 +1,9 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+  <h2>Create a new CFP</h2>
+  <form action="{{ path('qafoo_cfp_new') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type="submit" value="Submit RFC" />
+  </form>
+{% endblock %}
