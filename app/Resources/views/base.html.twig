@@ -28,12 +28,17 @@
 </head>
 <body>
 
-  <div class="menu">
-    {% block menu %}{% endblock %}
-  </div>
-  <div class="content container">
-    {% block messages %}{% endblock %}
-	{% block body %}{% endblock %}
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+	  <div class="container">
+        <a class="brand" href="/">Call-For-Papers manager (qaCFPs)</a>
+        <ul class="nav">
+          <li><a href="/reminder/upcoming">Upcoming CFPs</a></li>
+          <li><a href="/reminder/ending">Ending CFPs</a></li>
+  		<li><a href="/cfp/new">Create new CFP …</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <div class="container">
