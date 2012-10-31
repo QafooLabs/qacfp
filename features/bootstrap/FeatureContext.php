@@ -1,14 +1,6 @@
 <?php
 
-namespace Qafoo\CfpBundle\Features\Context;
-
-use Symfony\Component\HttpKernel\KernelInterface;
 use Behat\MinkExtension\Context\MinkContext;
-
-use Behat\Behat\Context\BehatContext,
-    Behat\Behat\Exception\PendingException;
-use Behat\Gherkin\Node\PyStringNode,
-    Behat\Gherkin\Node\TableNode;
 
 //
 // Require 3rd-party libraries here:
@@ -22,4 +14,38 @@ use Behat\Gherkin\Node\PyStringNode,
  */
 class FeatureContext extends MinkContext
 {
+    /**
+     * Mapping of form identifiers to local paths
+     *
+     * @var array
+     */
+    protected $formMap = array(
+        'new_cfp' => '/cfp/new',
+    );
+
+    /**
+     * @Given /^I am in form "([^"]*)"$/
+     */
+    public function iAmInForm($formName)
+    {
+        $this->getSession()->visit($this->locatePath(
+            $this->getPathForFormIdentifier($formName)
+        ));
+    }
+
+    /**
+     * Retrieve the path for the given $formIdentifier
+     *
+     * @param string $formIdentifier
+     * @return string The path for $formIdentifier
+     *
+     * @throws \Exception if no $formIdentifier is not recognized
+     */
+    protected function getPathForFormIdentifier($formIdentifier)
+    {
+        if (!isset($this->formMap[$formIdentifier])) {
+            throw new \Exception("Form $formIdentifier not recognized.");
+        }
+        return $this->formMap[$formIdentifier];
+    }
 }
