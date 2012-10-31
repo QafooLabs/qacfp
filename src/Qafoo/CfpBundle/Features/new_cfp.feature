@@ -14,6 +14,7 @@ Feature: Create a new CFP
 		And I press "Submit RFC"
 
 		Then I should see "CFP submitted successfully"
+		And I should see "You successfully submitted the CFP for the conference Example Conference."
 
 	Scenario Outline: Creating a new CFP fails on invalid fields
 		Given I am in form "new_cfp"

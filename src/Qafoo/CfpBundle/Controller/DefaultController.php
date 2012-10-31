@@ -47,11 +47,15 @@ class DefaultController extends Controller
             $form->bind($request);
 
             if ($form->isValid()) {
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($cfp);
+                $entityManager->flush();
+
                 return $this->redirect(
                     $this->generateUrl(
                         'qafoo_cfp_new_success',
                         array(
-                            'cfpId' => 23,
+                            'cfpId' => $cfp->getId(),
                         )
                     )
                 );
@@ -66,8 +70,14 @@ class DefaultController extends Controller
         );
     }
 
-    public function successAction()
+    public function successAction($cfpId)
     {
-        return $this->render('QafooCfpBundle:Default:success.html.twig');
+        $entityManager = $this->getDoctrine()->getManager();
+        $cfp = $entityManager->getRepository('QafooCfpBundle:Cfp')->find($cfpId);
+
+        return $this->render(
+            'QafooCfpBundle:Default:success.html.twig',
+            array('cfp' => $cfp)
+        );
     }
 }
