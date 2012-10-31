@@ -5,5 +5,9 @@
   <form action="{{ path('qafoo_cfp_new') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
     <input type="submit" value="Submit RFC" />
+    <a href="#" class="help" rel="popover"
+		data-placement="right"
+		data-content="Please only click if you really want to submit a CFP"
+		>Help</a>
   </form>
 {% endblock %}
