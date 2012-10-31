@@ -2,7 +2,7 @@
 
 namespace Qafoo\CfpBundle\Features\Context;
 
-use Behat\MinkExtension\Context\MinkContext;
+use Behat\Behat\Context\BehatContext;
 
 use Behat\Symfony2Extension\Context\KernelDictionary;
 
@@ -16,12 +16,22 @@ use Behat\Symfony2Extension\Context\KernelDictionary;
 /**
  * Feature context.
  */
-class FeatureContext extends MinkContext
+class FeatureContext extends BehatContext
 {
     /**
      * Symfony2 extension trait for access to kernel
      */
     use KernelDictionary;
+
+    /**
+     * Registers sub contexts
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->useContext('list_cfps', new ListingFeatureContext());
+    }
 
     /**
      * Mapping of form identifiers to local paths
