@@ -36,3 +36,19 @@ Feature: Create a new CFP
 			| Start | 2010-10- | This value is not valid. |
 			| End | 2010-10- | This value is not valid. |
 
+	@javascript
+	Scenario: A help button should clarify the role of the submit button.
+		Given I am in form "new_cfp"
+
+		When I fill in "Start" with "2020-10-31"
+		And I fill in "End" with "2020-11-03"
+		And I fill in "URL" with "http://example.com/cfp"
+		And I fill in "Conference Name" with "Example Conference"
+		And I fill in "Conference URL" with "http://example.com/conference"
+		And I fill in "Conference Date" with "2021-03-23"
+
+		And I follow "Help"
+		And I wait for the help box to appear
+
+		Then I should see "Please only click if you really want to submit a CFP"
+

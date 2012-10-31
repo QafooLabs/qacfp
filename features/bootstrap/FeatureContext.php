@@ -34,6 +34,17 @@ class FeatureContext extends MinkContext
     }
 
     /**
+     * @Given /^I wait for the help box to appear$/
+     */
+    public function iWaitForTheHelpBoxToAppear()
+    {
+        $this->getSession()->wait(
+            5000,
+            "$('.popover').length > 0"
+        );
+    }
+
+    /**
      * Retrieve the path for the given $formIdentifier
      *
      * @param string $formIdentifier
