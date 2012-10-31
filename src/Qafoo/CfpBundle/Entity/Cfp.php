@@ -2,19 +2,74 @@
 
 namespace Qafoo\CfpBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="cfp")
+ */
 class Cfp
 {
+    /**
+     * @var int
+     *
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="date")
+     */
     protected $start;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="date")
+     */
     protected $end;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=150)
+     */
     protected $url;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=50)
+     */
     protected $conferenceName;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=150)
+     */
     protected $conferenceUrl;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="date")
+     */
     protected $conferenceDate;
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getId($id)
+    {
+        return $this->id;
+    }
 
     public function setStart( \DateTime $startDate )
     {
