@@ -4,6 +4,8 @@ namespace Qafoo\CfpBundle\Features\Context;
 
 use Behat\Behat\Context\BehatContext;
 
+use Behat\MinkExtension\Context\MinkContext;
+
 use Behat\Symfony2Extension\Context\KernelDictionary;
 
 //
@@ -16,7 +18,7 @@ use Behat\Symfony2Extension\Context\KernelDictionary;
 /**
  * Feature context.
  */
-class FeatureContext extends BehatContext
+class FeatureContext extends MinkContext
 {
     /**
      * Symfony2 extension trait for access to kernel

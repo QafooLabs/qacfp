@@ -8,9 +8,6 @@ use Behat\Behat\Context\BehatContext;
 
 use Behat\Gherkin\Node\TableNode;
 
-use Behat\MinkExtension\Context\MinkAwareInterface;
-use Behat\MinkExtension\Context\MinkDictionary;
-
 use Behat\Symfony2Extension\Context\KernelDictionary;
 
 use Qafoo\CfpBundle\Entity\Cfp;
@@ -22,11 +19,6 @@ use \PHPUnit_Framework_Assert as Assertion;
  */
 class ListingFeatureContext extends BehatContext
 {
-    /**
-     * Access methods for Mink
-     */
-    use MinkDictionary;
-
     /**
      * Access methods Symfony kernel
      */
@@ -138,6 +130,27 @@ class ListingFeatureContext extends BehatContext
         $cfpListItems = $cfpList->findAll('css', 'li');
 
         Assertion::assertCount((int)$numberOfCfps, $cfpListItems);
+    }
+
+    /**
+     * Returns the Mink session
+     *
+     * @return \Behat\Mink\Session
+     */
+    protected function getSession()
+    {
+        return $this->getMainContext()->getSession();
+    }
+
+    /**
+     * Locate path indirection to Mink context
+     *
+     * @param string $path
+     * @return string
+     */
+    protected function locatePath($path)
+    {
+        return $this->getMainContext()->locatePath($path);
     }
 }
 
