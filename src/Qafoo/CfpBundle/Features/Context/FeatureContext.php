@@ -1,6 +1,10 @@
 <?php
 
+namespace Qafoo\CfpBundle\Features\Context;
+
 use Behat\MinkExtension\Context\MinkContext;
+
+use Behat\Symfony2Extension\Context\KernelDictionary;
 
 //
 // Require 3rd-party libraries here:
@@ -14,6 +18,11 @@ use Behat\MinkExtension\Context\MinkContext;
  */
 class FeatureContext extends MinkContext
 {
+    /**
+     * Symfony2 extension trait for access to kernel
+     */
+    use KernelDictionary;
+
     /**
      * Mapping of form identifiers to local paths
      *
