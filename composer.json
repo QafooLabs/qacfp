@@ -23,7 +23,8 @@
 		"behat/symfony2-extension": "*",
 		"behat/mink-extension": "*",
 		"behat/mink-goutte-driver": "*",
-		"behat/mink-selenium2-driver": "*"
+		"behat/mink-selenium2-driver": "*",
+		"behat/mink-sahi-driver": "*"
 	},
     "scripts": {
         "post-install-cmd": [
