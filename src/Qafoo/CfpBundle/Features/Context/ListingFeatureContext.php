@@ -5,9 +5,7 @@ namespace Qafoo\CfpBundle\Features\Context;
 require_once 'PHPUnit/Autoload.php';
 
 use Behat\Behat\Context\BehatContext;
-
 use Behat\Gherkin\Node\TableNode;
-
 use Behat\Symfony2Extension\Context\KernelDictionary;
 
 use Qafoo\CfpBundle\Entity\Cfp;
@@ -30,7 +28,7 @@ class ListingFeatureContext extends BehatContext
      * @var array
      */
     protected $viewMap = array(
-        'CFP listing' => '/cfp',
+        'CFP Listing' => '/cfp',
     );
 
     /**
@@ -92,9 +90,9 @@ class ListingFeatureContext extends BehatContext
     }
 
     /**
-     * @Given /^there are CFPs:$/
+     * @Given /^there are the following CFPs:$/
      */
-    public function thereAreCfps(TableNode $table)
+    public function thereAreTheFollowingCfps(TableNode $table)
     {
         $this->cleanupDatabase();
 
@@ -118,9 +116,9 @@ class ListingFeatureContext extends BehatContext
     }
 
     /**
-     * @Then /^I see (\d+) CFPs$/
+     * @Then /^I see (\d+) CFPs? listed$/
      */
-    public function iSeeCfps($numberOfCfps)
+    public function iSeeCfpsListed($numberOfCfps)
     {
         $page = $this->getSession()->getPage();
         $cfpList = $page->find('css', 'ul#cfps');
