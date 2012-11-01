@@ -1,7 +1,7 @@
-Feature: Links on start page
-	On the start page there should be links to upcoming and ending CFP list.
+Feature: Start page contains links to upcoming and ending CFPs
+	From the start page I want go directly to upcoming and ending CFPs.
 
-	Scenario:
+	Scenario: Text links for upcoming and ending CFPs are available.
 		Given I am on homepage
 		Then I should see "Upcoming ones"
 		And I should see "Ending ones"
